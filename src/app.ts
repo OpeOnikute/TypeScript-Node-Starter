@@ -42,7 +42,7 @@ mongoose.connect(mongoUrl, { useNewUrlParser: true, useCreateIndex: true } ).the
 
 // Connect to Redis server
 const RedisStore = connectRedis(session);
-const client = redis.createClient();
+const client = redis.createClient(process.env.REDIS_HOST);
 
 
 // Express configuration
