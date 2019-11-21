@@ -4,3 +4,5 @@ dist
 .vscode
 
 data/*
+
+.env.example

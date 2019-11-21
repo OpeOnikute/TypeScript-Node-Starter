@@ -28,6 +28,14 @@ services:
       - redis
     environment:
       NODE_ENV: dev
+      REDIS_HOST: cache
+      # This is standard running mongodb locally, but using the user created by init-mongo.js.
+      MONGODB_URI_LOCAL: mongodb://otheruser:example@db:27017/ts-starter
+      # Put lots of randomness in these
+      SESSION_SECRET: ashdfjhasdlkjfhalksdjhflak
+      # Facebook keys - register your app and get yours here: https://developers.facebook.com/
+      FACEBOOK_ID: 754220301289665
+      FACEBOOK_SECRET: 41860e58c256a3d7ad8267d3c1939a4a
     links:
       - redis
     volumes:
