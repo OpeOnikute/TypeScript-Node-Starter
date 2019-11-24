@@ -307,6 +307,13 @@ resource "aws_iam_role_policy" "ecs_full_access" {
 EOF
 }
 
+module "cache" {
+  source = "./modules/elastic-cache"
+
+  environment = "${var.environment}"
+  cluster_id  = "${var.environment}-cluster"
+}
+
 module "ecs" {
   source = "./modules/ecs"
 
@@ -319,7 +326,7 @@ module "ecs" {
   repo_name      = "${var.repo_name}"
   DATABASE_URL   = "${var.DATABASE_URL}"
   PORT           = "${var.PORT}"
-  REDIS_HOST     = "${var.REDIS_HOST}"
+  REDIS_HOST     = "${module.cache.address}"
   SESSION_SECRET = "${var.SESSION_SECRET}"
   FACEBOOK_ID    = "${var.FACEBOOK_ID}"
 
