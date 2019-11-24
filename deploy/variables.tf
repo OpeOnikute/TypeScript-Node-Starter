@@ -17,6 +17,14 @@ variable "organization_name" {
   default     = "acme"
 }
 
+variable "environment" {
+  default = "production"
+}
+
+variable "char_delimiter" {
+  default = "-"
+}
+
 # CodeCommit Module Variables
 variable "repo_name" {
   description = "The name of the CodeCommit repository (e.g. new-repo)."
@@ -25,5 +33,18 @@ variable "repo_name" {
 
 variable "repo_default_branch" {
   description = "The name of the default repository branch (default: master)"
-  default     = "master"
+  default     = "exercise"
 }
+
+# CodePipeline variables
+
+variable "github_token" {}
+
+# App-specific variables
+variable "DATABASE_URL" {}
+
+variable "PORT" {}
+variable "REDIS_HOST" {}
+variable "SESSION_SECRET" {}
+variable "FACEBOOK_ID" {}
+variable "FACEBOOK_SECRET" {}
