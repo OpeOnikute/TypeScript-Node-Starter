@@ -1,0 +1,46 @@
+[
+  {
+    "name": "web",
+    "image": "${image}",
+    "cpu": 100,
+    "portMappings": [
+      {
+        "protocol": "tcp",
+        "containerPort": 3000,
+        "hostPort": 80
+      }
+    ],
+    "memory": 128,
+    "essential": true,
+    "environment": [
+      {
+        "name": "NODE_ENV",
+        "value": "production"
+      },
+      {
+        "name": "PORT",
+        "value": "${PORT}"
+      },
+      {
+        "name": "REDIS_HOST",
+        "value": "${REDIS_HOST}"
+      },
+      {
+        "name": "MONGODB_URI",
+        "value": "${DATABASE_URL}"
+      },
+      {
+        "name": "SESSION_SECRET",
+        "value": "${SESSION_SECRET}"
+      },
+      {
+        "name": "FACEBOOK_ID",
+        "value": "${FACEBOOK_ID}"
+      },
+      {
+        "name": "FACEBOOK_SECRET",
+        "value": "${FACEBOOK_SECRET}"
+      }
+    ]
+  }
+]
