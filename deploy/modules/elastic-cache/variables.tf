@@ -7,7 +7,18 @@ variable "cluster_node_type" {
 }
 
 variable "cluster_id" {
-  description = "Id to assign the new cluster"
+  description = "ID to assign the new cluster."
 }
 
-variable "environment" {}
+variable "environment" {
+  description = "Name of the environment. e.g. production."
+}
+
+variable "subnet_ids" {
+  type        = "list"
+  description = "List of subnets allowed to access this resource."
+}
+
+variable "security_group_id" {
+  description = "ID of the associated security group."
+}
