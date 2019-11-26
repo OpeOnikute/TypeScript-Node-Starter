@@ -7,12 +7,13 @@ services:
     ports:
       - 6379:6379
   db:
-    image: mongo
+    image: mongo:4.2
     restart: always
     ports:
       - "27017:27017"
     volumes:
       - ./data/db:/data/db
+      # Run the init script to create the mongo user on startup.
       - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
     environment:
       MONGO_INITDB_ROOT_USERNAME: myuser

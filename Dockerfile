@@ -3,6 +3,10 @@ FROM node:10-alpine
 
 WORKDIR /usr/src/app
 
+LABEL maintainer="opeyemionikute@yahoo.com"
+LABEL description="Typescript node starter"
+LABEL version="1.0"
+
 # App runs on port 3000
 EXPOSE 3000
 
