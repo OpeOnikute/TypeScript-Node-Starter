@@ -8,9 +8,13 @@ variable "key_pair" {
 }
 
 # Access keys are initialized as environment variables
-variable "access_key" {}
+variable "access_key" {
+  description = "AWS Access Key"
+}
 
-variable "secret_key" {}
+variable "secret_key" {
+  description = "AWS Secret Key"
+}
 
 variable "organization_name" {
   description = "The organization name provisioning the template (e.g. acme)"

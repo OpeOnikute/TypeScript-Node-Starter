@@ -1,0 +1,23 @@
+organization_name = "OpeOnikute"
+
+repo_name = "TypeScript-Node-Starter"
+
+access_key = "<Insert key here>"
+
+secret_key = "<Insert key here>"
+
+NODE_ENV = "dev"
+
+REDIS_HOST = "<Redis URL here>"
+
+DATABASE_URL = "<Mongo URL here>"
+
+SESSION_SECRET = "ksjdbskdjbskb23232"
+
+FACEBOOK_ID = 754220301289665
+
+FACEBOOK_SECRET = "41860e58c256a3d7ad8267d3c1939a4a"
+
+PORT = 80
+
+github_token = "232323232jkbkjbjbk"
