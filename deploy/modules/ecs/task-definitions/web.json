@@ -7,11 +7,25 @@
       {
         "protocol": "tcp",
         "containerPort": 3000,
+        "hostPort": 3000
+      },
+      {
+        "protocol": "tcp",
+        "containerPort": 80,
         "hostPort": 80
       }
     ],
     "memory": 128,
+    "networkMode": "awsvpc",
     "essential": true,
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "awslogs-test",
+        "awslogs-region": "us-east-1",
+        "awslogs-stream-prefix": "web"
+      }
+    },
     "environment": [
       {
         "name": "NODE_ENV",

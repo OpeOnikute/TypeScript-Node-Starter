@@ -1,3 +1,4 @@
+# Application Environment variables
 variable "DATABASE_URL" {}
 
 variable "PORT" {}
@@ -6,15 +7,35 @@ variable "SESSION_SECRET" {}
 variable "FACEBOOK_ID" {}
 variable "FACEBOOK_SECRET" {}
 
-variable "repo_name" {}
+variable "ecs_cluster_name" {
+  description = "Name of the ECS cluster."
+}
 
-variable "ecs_cluster_name" {}
+variable "ecs_service_name" {
+  description = "Name of the ECS service."
+}
 
-variable "ecs_service_name" {}
+variable "vpc_id" {
+  description = "ID of the VPC the cluster should reside in."
+}
 
-variable "iam_role_arn" {}
+variable "environment" {
+  description = "Name of the environment. e.g. production."
+}
 
-variable "iam_role_policy_name" {}
+variable "subnets_ids" {
+  type        = "list"
+  description = "List of network subnets allowed access to the cluster."
+}
+
+variable "security_group_id" {
+  description = "ID of the associated security group."
+}
+
+variable "public_subnet_ids" {
+  type        = "list"
+  description = "List of public subnets needed for the ALB."
+}
 
 /*
     Minor hack from - https://discuss.hashicorp.com/t/tips-howto-implement-module-depends-on-emulation/2305
@@ -27,7 +48,6 @@ variable "iam_role_policy_name" {}
 
     This is a hack until Terraform officially support module depends_on.
 */
-
 variable "module_depends_on" {
   default = [""]
 }
