@@ -197,7 +197,7 @@ resource "aws_ecs_service" "web" {
 
   launch_type = "FARGATE"
 
-  depends_on = ["aws_iam_role_policy.ecs_service_role_policy"]
+  depends_on = ["aws_iam_role_policy.ecs_service_role_policy", "aws_alb.alb_default"]
 
   load_balancer {
     target_group_arn = "${aws_alb_target_group.alb_target_group.arn}"

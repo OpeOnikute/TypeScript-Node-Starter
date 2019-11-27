@@ -336,17 +336,17 @@ EOF
 // has proven very difficult, even with both of them placed in the same VPC and 
 // with the same security group.
 // The REDIS_HOST parameter being set is on from an external provider for now.
-# module "cache" {
-#   source = "./modules/elastic-cache"
+module "cache" {
+  source = "./modules/elastic-cache"
 
-#   environment = "${var.environment}"
-#   cluster_id  = "${var.environment}-cluster"
+  environment = "${var.environment}"
+  cluster_id  = "${var.environment}-cluster"
 
-#   # Network-related variables
-#   vpc_id            = "${module.vpc.id}"
-#   security_group_id = "${module.vpc.security_group_id}"
-#   subnet_ids        = "${concat(module.subnet.private_ids, module.subnet.public_ids)}"
-# }
+  # Network-related variables
+  security_group_id = "${module.vpc.security_group_id}"
+
+  subnet_ids = "${module.subnet.private_ids}"
+}
 
 module "ecs" {
   source = "./modules/ecs"
@@ -362,9 +362,11 @@ module "ecs" {
   security_group_id = "${module.vpc.security_group_id}"
 
   # App environment variables
-  DATABASE_URL    = "${var.DATABASE_URL}"
-  PORT            = "${var.PORT}"
-  REDIS_HOST      = "${var.REDIS_HOST}"
+  DATABASE_URL = "${var.DATABASE_URL}"
+  PORT         = "${var.PORT}"
+
+  #   REDIS_HOST      = "${var.REDIS_HOST}"
+  REDIS_HOST      = "redis://${module.cache.address}:6379"
   SESSION_SECRET  = "${var.SESSION_SECRET}"
   FACEBOOK_ID     = "${var.FACEBOOK_ID}"
   FACEBOOK_SECRET = "${var.FACEBOOK_SECRET}"

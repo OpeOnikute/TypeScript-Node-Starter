@@ -41,7 +41,7 @@ This section will describe the infrastructure as a whole. The resources in the l
 ![](./screenshots/Screen-2.png)
 
 
-- [ ] **ElastiCache (Redis)** - Cache cluster to run Redis. This was provisioned properly to the best of my knowledge, but I was having issues accessing it from ECS. For now, an externel Redis host is being used. Another option would have been to run Redis in another container, but that's not really production-grade.
+- [x] **ElastiCache (Redis)** - Cache cluster to run Redis. Resides in the same VPC as the app. Another option would have been to run Redis in another container, but that's not really production-grade.
 
 - [x] **MongoDB Atlas** - Since there is no straightforward way to setup a MongoDB cluster on AWS, it is adviced by even AWS evangelists to go with Atlas at first, which is a free managed service.
 

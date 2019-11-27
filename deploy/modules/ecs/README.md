@@ -1,5 +1,5 @@
 # ECS (Elastic Container Service) Module
-This is used to create an ECS cluster to serve our application using Docker containers. The cluster resides in the global VPC and can only be accessed through the ALB configured.
+This is used to create an ECS cluster to serve our application using Docker containers. The cluster resides in the global VPC and can only be accessed by resources in the same VPC.
 
 # Dependencies
 - ECR Module - Used to get the docker image URL.
