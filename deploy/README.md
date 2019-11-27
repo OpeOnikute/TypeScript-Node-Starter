@@ -9,7 +9,7 @@ The various resources are split into modules so they are re-usable and logically
 
 - Create a `terraform.tfvars` and enter all the sensitive variables. Use `terraform.tfvars.example` as a template.
 
-- Run `terraform init`. This would install all dependencies and initialze modules.
+- Run `terraform init`. This would install all dependencies and initialize modules.
 
 - Run `terraform plan`. Address any errors this might bring up.
 
@@ -23,7 +23,9 @@ All done!
 
 ## Infrastructure Overview
 
-This section will describe the infrastructure as a whole. The resources in the list below are involved in  provisioning the infrastructure. They are split into modules in the code, with each having a README that gives more in-depth detail about its function.
+![Architecture Diagram](./screenshots/vpc.png)
+
+The resources in the list below are involved in  provisioning the infrastructure. They are split into modules in the code, with each having a README that gives more in-depth detail about its function.
 
 - [ ] **CodeCommit** - This was intended to be the source repository, but it made more sense to pull straight from the Github repo. So I made Github the source instead.
 
