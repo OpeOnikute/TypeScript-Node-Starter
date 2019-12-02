@@ -12,4 +12,4 @@ This branch contains the challenge solution.
 ## Deployment using Terraform
 The deployment automation solution and documentation, can be found in `deploy/README.md`. 
 
-**PLEASE NOTE** - The URL for the solution is now http://production-alb-default-563077203.us-east-1.elb.amazonaws.com/. It changed because it shut down for the night to save cost. 
+**PLEASE NOTE** - The URL for the solution is now http://production-alb-default-2054886402.us-east-1.elb.amazonaws.com. It changed because it shut down for the night to save cost. 
